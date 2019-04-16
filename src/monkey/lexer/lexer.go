@@ -1,7 +1,6 @@
 package lexer
 
 import (
-	"fmt"
 	"monkey/token"
 )
 
@@ -103,13 +102,13 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 }
 
 func (l *Lexer) readIdentifier() string {
-	fmt.Printf("\n[*] BEFORE - position: %d\n", l.position)
+	//fmt.Printf("\n[*] BEFORE - position: %d\n", l.position)
 	position := l.position
 	for isLetter(l.ch) {
 		l.readChar()
 	}
-	fmt.Printf("[*] AFTER - position: %d\n", l.position)
-	fmt.Printf("l.input[position:l.position] = %s\n\n", l.input[position:l.position])
+	//fmt.Printf("[*] AFTER - position: %d\n", l.position)
+	//fmt.Printf("l.input[position:l.position] = %s\n\n", l.input[position:l.position])
 	return l.input[position:l.position]
 }
 
